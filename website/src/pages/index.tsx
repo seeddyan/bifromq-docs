@@ -9,13 +9,13 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title="BifroMQ Open Source"
+      title="Apache BifroMQ (Incubating)"
       description={`${siteConfig.tagline}`}
     >
       <div className='dark:text-gray-100 text-gray-500'>
-        <HomeSection />
-        <HomeFooter />
-      </div>
+          <HomeSection />
+          <HomeFooter />
+        </div>
     </Layout>
   );
 }
