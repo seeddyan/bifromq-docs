@@ -51,7 +51,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+          <div className="flex flex-col md:flex-row gap-6 justify-center mb-16">
             <Link
               to="/docs"
               className="group relative inline-flex items-center px-8 py-4 rounded-2xl bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-all duration-300 hover:shadow-2xl hover:shadow-white/25 hover:-translate-y-1 overflow-hidden"

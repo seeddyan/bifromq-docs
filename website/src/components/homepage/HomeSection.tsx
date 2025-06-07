@@ -21,7 +21,8 @@ import {
   WifiIcon,
   DevicePhoneMobileIcon,
   ComputerDesktopIcon,
-  SparklesIcon
+  SparklesIcon,
+  ChevronDownIcon
 } from '@heroicons/react/24/outline';
 import {
   CpuChipIcon as CpuChipIconSolid,
@@ -382,10 +383,10 @@ export default function HomeSection() {
               ))}
             </div> */}
 
-            {/* CTA 按钮 */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+            {/* hero 按钮 */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-16">
               <a
-                href="./docs/Readme/"
+                href="./docs/get_started/intro/"
                 className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
               >
                 {/* 按钮光效 */}
@@ -430,6 +431,27 @@ export default function HomeSection() {
             </div>
           </div>
         </div>
+        
+        {/* 向下指引箭头 */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20">
+          <div className="group relative flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-gray-200/60 bg-white/90 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:shadow-xl dark:border-gray-700/50 dark:bg-gray-800/90"
+            onClick={() => {
+              const nextSection = document.querySelector('section:nth-of-type(2)');
+              nextSection?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            <div className="absolute -top-[4.25rem] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-gray-900 px-3 py-1.5 text-sm text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:bg-gray-100 dark:text-gray-900">
+              <Translate>Scroll to explore</Translate>
+              <div className="absolute top-full left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-900 dark:bg-gray-100"></div>
+            </div>
+
+            <div className="absolute h-full w-full animate-ping rounded-full border-2 border-sky-400/50"></div>
+            <div className="absolute h-full w-full animate-pulse rounded-full border border-sky-400/50"></div>
+
+            <ChevronDownIcon className="mt-2 relative h-7 w-7 animate-bounce text-sky-600 transition-colors group-hover:text-sky-500 dark:text-sky-400 dark:group-hover:text-sky-300 translate-y-0.5" />
+          </div>
+        </div>
+
       </section>
 
       {/* 客户信任区域 - 重新设计 */}
@@ -459,7 +481,7 @@ export default function HomeSection() {
                 {/* 悬停光效 */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
 
-                <div className="relative">
+                <div className="relative flex items-center justify-center">
                   <img
                     className="max-h-12 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 mx-auto filter grayscale group-hover:grayscale-0"
                     src={customer.logo}
@@ -614,6 +636,31 @@ export default function HomeSection() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+        
+        {/* 向下指引箭头 */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="group cursor-pointer" onClick={() => {
+            const nextSection = document.querySelector('section:nth-of-type(2)');
+            nextSection?.scrollIntoView({ behavior: 'smooth' });
+          }}>
+            <div className="relative">
+              {/* 外圈动画环 */}
+              <div className="absolute inset-0 w-12 h-12 rounded-full border-2 border-blue-400/30 dark:border-blue-500/30 animate-ping"></div>
+              <div className="absolute inset-0 w-12 h-12 rounded-full border border-blue-300/50 dark:border-blue-600/50 animate-pulse"></div>
+              
+              {/* 主按钮 */}
+              <div className="relative w-12 h-12 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center group-hover:scale-110">
+                <ChevronDownIcon className="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors animate-bounce" />
+              </div>
+              
+              {/* 悬停提示 */}
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs px-3 py-1 rounded-lg whitespace-nowrap">
+                <Translate>Scroll to explore</Translate>
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-gray-100 rotate-45"></div>
+              </div>
             </div>
           </div>
         </div>
