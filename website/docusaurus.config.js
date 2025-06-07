@@ -1,14 +1,15 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 const tailwindPlugin = require('./plugins/tailwind-plugin.cjs')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: ' BifroMQ.io - Multi-tenancy MQTT Broker',
-  tagline: 'BifroMQ is a Java-based high-performance MQTT Broker messaging middleware that adopts Multi-tenancy architecture. Open-sourced by Baidu.',
+  title: 'Apache BifroMQ (Incubating) - Open source MQTT Broker',
+  tagline: 'High-performance, multi-tenant MQTT broker for enterprise IoT infrastructure - Apache Incubator Project',
   favicon: 'img/favicon.ico',
   url: 'https://bifromq.io/',
   baseUrl: '/',
@@ -42,7 +43,6 @@ const config = {
             if (locale !== config.i18n.defaultLocale) {
               return `https://github.com/bifromqio/bifromq-docs/tree/master/website/i18n/zh-Hans/docusaurus-plugin-content-docs/`;
             }
-            // Link to GitHub for English docs
             return `https://github.com/bifromqio/bifromq-docs/tree/master/website/${versionDocsDirPath}/${docPath}`;
           },
           lastVersion: 'current',
@@ -56,7 +56,6 @@ const config = {
         blog: {
           showReadingTime: true,
           blogSidebarCount: 10,
-          // Please change this to your repo.
           editUrl: ({locale}) => {
             if (locale !== config.i18n.defaultLocale) {
               return "https://github.com/bifromqio/bifromq-docs/blob/master/website/i18n/zh-Hans/docusaurus-plugin-content-blog";
@@ -77,7 +76,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: 'light',
+        respectPrefersColorScheme: true,
       },
       zoom: {
         selector: '.markdown :not(em) > img',
@@ -90,8 +90,8 @@ const config = {
         }
       },
       navbar: {
-        title: 'BifroMQ',
-        hideOnScroll: true,
+        title: 'Apache BifroMQ (Incubating)',
+        hideOnScroll: false,
         logo: {
           alt: 'BifroMQ Logo',
           src: 'img/logo.svg',
@@ -111,18 +111,13 @@ const config = {
             position: 'right'
           },
           {
-            to: 'https://github.com/bifromqio/bifromq',
+            href: 'https://github.com/bifromqio/bifromq',
             label: 'GitHub',
             position: 'right',
           },
           {
             type: 'localeDropdown',
             position: 'right',
-          },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
           },
         ],
       },

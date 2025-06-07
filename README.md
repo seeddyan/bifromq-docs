@@ -1,7 +1,13 @@
-[<img src="website/static/img/logo.svg" width="20%">](https://bifromq.io/)
+# Apache BifroMQ (Incubating) Documentation
 
-This repository is for [bifromq](https://bifromq.io/) documentations and blogs. 
+Apache BifroMQ is currently undergoing incubation at the Apache Software Foundation.
+
+This repository is for [Apache BifroMQ](https://bifromq.io/) documentations and blogs. 
 The website is built on [Docusaurus 2](https://docusaurus.io/) which is a modern static website generator.
+
+## Disclaimer
+
+Apache BifroMQ is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.
 
 ## Getting Started
 
