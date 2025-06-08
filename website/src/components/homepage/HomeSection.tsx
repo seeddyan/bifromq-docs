@@ -639,31 +639,6 @@ export default function HomeSection() {
             </div>
           </div>
         </div>
-        
-        {/* 向下指引箭头 */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="group cursor-pointer" onClick={() => {
-            const nextSection = document.querySelector('section:nth-of-type(2)');
-            nextSection?.scrollIntoView({ behavior: 'smooth' });
-          }}>
-            <div className="relative">
-              {/* 外圈动画环 */}
-              <div className="absolute inset-0 w-12 h-12 rounded-full border-2 border-blue-400/30 dark:border-blue-500/30 animate-ping"></div>
-              <div className="absolute inset-0 w-12 h-12 rounded-full border border-blue-300/50 dark:border-blue-600/50 animate-pulse"></div>
-              
-              {/* 主按钮 */}
-              <div className="relative w-12 h-12 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center group-hover:scale-110">
-                <ChevronDownIcon className="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors animate-bounce" />
-              </div>
-              
-              {/* 悬停提示 */}
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs px-3 py-1 rounded-lg whitespace-nowrap">
-                <Translate>Scroll to explore</Translate>
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-gray-100 rotate-45"></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* 使用案例区域 - 新增 */}
