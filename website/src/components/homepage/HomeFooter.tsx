@@ -12,24 +12,17 @@ const HomeFooter: React.FC = () => {
   return (
     <footer className="bg-gray-900 dark:bg-gray-950">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
           {/* Company Info */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center mb-4">
-              {/* <div className="p-2 rounded-lg bg-blue-600 mr-3">
-                <img
-                  src="./img/logo.svg"
-                  alt="BifroMQ"
-                  className="h-5 w-5 filter brightness-0 invert"
-                />
-              </div> */}
+          <div className="sm:col-span-2 lg:col-span-1 flex flex-col">
+            <div className="flex items-center mb-6">
               <span className="text-xl font-bold text-white">
                 BifroMQ
               </span>
             </div>
-            <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+            <p className="text-gray-400 mb-4 text-sm leading-relaxed">
               <Translate>
-                Open-source, high-performance MQTT broker with enterprise-grade reliability. Trusted by industry leaders for mission-critical messaging systems.
+                Open-source, high-performance MQTT broker with enterprise-grade reliability. Applicable to IoT, IM and other scenarios.
               </Translate>
             </p>
             
@@ -37,7 +30,7 @@ const HomeFooter: React.FC = () => {
             <div className="flex space-x-3">
               <a
                 href="mailto:hello@bifromq.io"
-                className="p-2 rounded-lg bg-gray-800 text-gray-400 hover:text-blue-400 hover:bg-gray-700 transition-all duration-200"
+                className="size-10 flex items-center justify-center rounded-lg bg-gray-800 text-gray-400 hover:text-blue-400 hover:bg-gray-700 transition-all duration-200"
                 aria-label="Email"
               >
                 <EnvelopeIcon className="h-4 w-4" />
@@ -46,7 +39,7 @@ const HomeFooter: React.FC = () => {
                 href="https://discord.gg/Pfs3QRadRB"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-gray-800 text-gray-400 hover:text-purple-400 hover:bg-gray-700 transition-all duration-200"
+                className="size-10 flex items-center justify-center rounded-lg bg-gray-800 text-gray-400 hover:text-blue-400 hover:bg-gray-700 transition-all duration-200"
                 aria-label="Discord"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -57,7 +50,7 @@ const HomeFooter: React.FC = () => {
                 href="https://github.com/apache/bifromq"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-200"
+                className="size-10 flex items-center justify-center rounded-lg bg-gray-800 text-gray-400 hover:text-blue-400 hover:bg-gray-700 transition-all duration-200"
                 aria-label="GitHub"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -65,25 +58,16 @@ const HomeFooter: React.FC = () => {
                 </svg>
               </a>
             </div>
-            <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0 mt-6">
-              <div className="text-center lg:text-left">
-                <p className="text-xs text-gray-400">
-                  © {new Date().getFullYear()} <span className="text-white font-medium">Apache BifroMQ (Incubating)</span>. 
-                  <br />
-                  <Translate>All rights reserved.</Translate>
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Resources */}
-          <div>
-            <h3 className="text-sm font-semibold text-white mb-4 flex items-center">
+          <div className="flex flex-col h-full">
+            <h3 className="text-sm font-semibold text-white mb-6 flex items-center">
               <NewspaperIcon className="h-4 w-4 mr-2 text-green-400" />
               <Translate>Resources</Translate>
             </h3>
-            <ul className="space-y-3">
-              <li className="group">
+            <div className="space-y-4 flex-grow">
+              <div className="group">
                 <Link
                   to="/blog"
                   className="text-sm text-gray-400 hover:text-white transition-all duration-200 flex items-center group-hover:translate-x-1"
@@ -91,8 +75,8 @@ const HomeFooter: React.FC = () => {
                   <span className="w-1 h-1 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                   <Translate>Blog</Translate>
                 </Link>
-              </li>
-              <li className="group">
+              </div>
+              <div className="group">
                 <a
                   href="https://github.com/apache/bifromq"
                   target="_blank"
@@ -102,8 +86,8 @@ const HomeFooter: React.FC = () => {
                   <span className="w-1 h-1 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                   <Translate>GitHub</Translate>
                 </a>
-              </li>
-              <li className="group">
+              </div>
+              <div className="group">
                 <a
                   href="https://github.com/apache/bifromq/releases"
                   target="_blank"
@@ -113,8 +97,8 @@ const HomeFooter: React.FC = () => {
                   <span className="w-1 h-1 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                   <Translate>Releases</Translate>
                 </a>
-              </li>
-              <li className="group">
+              </div>
+              <div className="group">
                 <a
                   href="https://github.com/apache/bifromq/issues"
                   target="_blank"
@@ -124,18 +108,18 @@ const HomeFooter: React.FC = () => {
                   <span className="w-1 h-1 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                   <Translate>Issues</Translate>
                 </a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
 
           {/* Apache */}
-          <div>
-            <h3 className="text-sm font-semibold text-white mb-4 flex items-center">
+          <div className="flex flex-col h-full">
+            <h3 className="text-sm font-semibold text-white mb-6 flex items-center">
               <DocumentTextIcon className="h-4 w-4 mr-2 text-blue-400" />
               <Translate>Apache</Translate>
             </h3>
-            <ul className="space-y-3">
-              <li className="group">
+            <div className="space-y-4 flex-grow">
+              <div className="group">
                 <Link
                   to="https://incubator.apache.org/"
                   className="text-sm text-gray-400 hover:text-white transition-all duration-200 flex items-center group-hover:translate-x-1"
@@ -143,8 +127,8 @@ const HomeFooter: React.FC = () => {
                   <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                   <Translate>Apache Incubator</Translate>
                 </Link>
-              </li>
-              <li className="group">
+              </div>
+              <div className="group">
                 <Link
                   to="https://www.apache.org/foundation/policies/conduct"
                   className="text-sm text-gray-400 hover:text-white transition-all duration-200 flex items-center group-hover:translate-x-1"
@@ -152,8 +136,8 @@ const HomeFooter: React.FC = () => {
                   <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                   <Translate>Code of Conduct</Translate>
                 </Link>
-              </li>
-              <li className="group">
+              </div>
+              <div className="group">
                 <Link
                   to="https://www.apache.org/licenses/LICENSE-2.0"
                   className="text-sm text-gray-400 hover:text-white transition-all duration-200 flex items-center group-hover:translate-x-1"
@@ -161,27 +145,36 @@ const HomeFooter: React.FC = () => {
                   <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                   <Translate>Apache 2.0 License</Translate>
                 </Link>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
           
           {/* Apache Incubator */}
-          <div className="lg:col-span-2">
-            <h3 className="text-sm font-semibold text-white mb-4 flex items-center">
-              <TagIcon className="h-4 w-4 mr-2 text-blue-400" />
+          <div className="sm:col-span-2 lg:col-span-2 flex flex-col h-full">
+            <h3 className="text-sm font-semibold text-white mb-6 flex items-center">
+              <TagIcon className="h-4 w-4 mr-2 text-orange-400" />
               <Translate>Apache Incubator</Translate>
             </h3>
-            <div className="space-y-3">
-              <div className="p-4 rounded-lg bg-gradient-to-br from-blue-900/30 to-indigo-900/30 border border-blue-600/20">
-                <p className="text-gray-300 text-xs leading-relaxed">
-                  <strong className="text-blue-400">Apache BifroMQ</strong> is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator.
-                </p>
-                <p className="text-gray-400 text-xs leading-relaxed -mb-0">
-                  Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects.
+            <div className="space-y-4 flex-grow flex flex-col">
+              <div className="p-4 rounded-lg bg-gradient-to-br from-blue-900/30 to-indigo-900/30 border border-blue-600/20 flex-grow">
+                <p className="text-gray-300 text-xs leading-relaxed -mb-0">
+                  <strong className="text-blue-400">Apache BifroMQ</strong> is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.
                 </p>
               </div>
-              
+              <div className="flex justify-center mt-auto">
+                <img src="https://fury.apache.org/img/apache-incubator.svg" alt="Apache Incubator" className="w-32 h-auto rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-200" />
+              </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Copyright */}
+        <div className="pt-8 border-t border-gray-800">
+          <div className="text-center">
+            <p className="text-xs text-gray-400">
+              © {new Date().getFullYear()} <span className="text-white">Apache BifroMQ (Incubating)</span>. 
+              <Translate> All rights reserved. </Translate>
+            </p>
           </div>
         </div>
       </div>
